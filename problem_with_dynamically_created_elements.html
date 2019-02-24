@@ -1,0 +1,38 @@
+<html>
+
+<body>
+    <button id="add-div" onclick="addElement()">Adds a new div</button>
+    <div id="static" class="xyz">Exist from beginning....</div>
+    
+</body>
+
+<script>
+
+    function changeColor(e){
+        e.target.style.color="red";
+    }
+
+    /* 
+     * Event listener doesnt get assigned to new elements created by addElement() function 
+     * even though they have class='xyz' 
+     */
+    function addElement(){
+        let div = document.createElement('div');
+
+        div.setAttribute('class','xyz');
+        div.textContent = "I am new...";
+        
+        //uncomment to assign event listener to elements created by this method.
+        /* div.addEventListener('click',changeColor); */
+        document.body.appendChild(div);
+
+    }
+
+    /* 
+     * Adding event listeners to elemnts available at the time this js was loaded.
+     * 
+     */
+    for (element of document.querySelectorAll('.xyz'))
+        element.addEventListener('click',changeColor);
+</script>
+</html>
