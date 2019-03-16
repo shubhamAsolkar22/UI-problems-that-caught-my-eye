@@ -1,0 +1,18 @@
+<!-- You may ocassionally encounter an HTML document that uses href="JavaScript:Void(0);" within an <a> element.
+
+JavaScript void is often used when, inserting an expression into a web page may produce an unwanted side-effect.
+
+By using JavaScript:Void(0), you can eliminate the unwanted side-effect, because it will return the undefined primative value.
+
+A common usage of JavaScript:Void(0) is with hyperlinks.
+
+Sometimes, you may need to call some JavaScript from within a link. Normally, when you click a link, the browser loads a new page or refreshes the same page (depending on the URL specified). But you probably don't want this to happen if you've attached some JavaScript to that link.
+
+To prevent the page from refreshing, you could use JavaScript:void(0). 
+
+courtsey -> https://www.quackit.com/javascript/tutorial/javascript_void_0.cfm
+-->
+
+<a href="JavaScript:void(0);" ondblclick="alert('Well done!')" >Won't refresh the page on single click!</a>
+
+
